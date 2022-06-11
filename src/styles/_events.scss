@@ -1,0 +1,129 @@
+@use "globals"as *;
+@use "swiper/css/bundle";
+
+.events {
+    padding-top: 5.8rem;
+    padding-bottom: 5.8rem;
+    position: relative;
+    width: 100%;
+    background: url("./img/events-bg.jpg") 0% 55% / cover no-repeat fixed;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: #0c0b0a;
+        opacity: 0.8;
+        z-index: 1;
+    }
+
+    .section-heading {
+        position: relative;
+        z-index: 999;
+
+        h2 {
+            color: #fff;
+        }
+    }
+
+    &__slider {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .swiper-wrapper {
+        width: 100%;
+        z-index: 999;
+    }
+
+    .swiper-slide {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.7rem;
+    }
+
+    .swiper-pagination-horizontal {
+        bottom: 60px;
+    }
+
+    .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+        opacity: 0.5;
+        background-color: #fff;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: $col-main;
+        opacity: 1;
+    }
+
+    img {
+        display: block;
+        height: auto;
+        width: 100%;
+    }
+
+    &__main {
+        color: #fff;
+
+        h3 {
+            color: $col-main;
+            font-family: "Satisfy", sans-serif;
+            font-weight: 600;
+            font-size: 26px;
+            margin-bottom: 0.7rem;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 16px;
+            margin-bottom: 0.7rem;
+
+            &:last-child {
+                margin: 0;
+            }
+        }
+
+        ul {
+            list-style-type: none;
+            margin-bottom: 1.7rem;
+            font-weight: 400;
+
+            .icon-checkmark {
+                color: $col-main;
+                font-size: 16px;
+                margin-right: 0.4rem;
+            }
+
+            li {
+                display: inline-block;
+                margin-bottom: 0.7rem;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        #event-price {
+            display: inline-block;
+            font-size: 26px;
+            font-weight: 700;
+            border-bottom: 2px solid $col-main;
+            line-height: 38px;
+            margin-bottom: 0.7rem;
+        }
+    }
+}
+
+@include breakpoint(1000px) {
+    .events {
+        .swiper-slide {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}

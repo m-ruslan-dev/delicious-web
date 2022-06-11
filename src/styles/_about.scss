@@ -1,0 +1,80 @@
+@use "globals"as *;
+
+.about {
+    @include add_flex();
+    align-items: stretch;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background-color: #fffaf3;
+
+    &__img {
+        margin-bottom: 2.2rem;
+        width: 100%;
+        min-height: 400px;
+        background: url("./img/about.jpg") center / cover no-repeat;
+    }
+
+    &__article {
+        padding: 0 0.8rem;
+        width: 100%;
+
+        h2 {
+            color: $col-heading;
+            font-size: 34px;
+            font-family: 'Satisfy', sans-serif;
+            font-weight: 400;
+            line-height: 2.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            color: #848484;
+            margin-bottom: 0.8rem;
+            font-size: 15px;
+            font-weight: 400;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+            span {
+                font-style: italic;
+            }
+        }
+
+        ul {
+            list-style-type: none;
+
+            li {
+                vertical-align: middle;
+                margin-bottom: 0.8rem;
+                font-weight: 400;
+            }
+
+            .icon-checkmark {
+                color: $col-main;
+                font-size: 14px;
+                margin-right: 0.4rem;
+            }
+        }
+    }
+}
+
+@include breakpoint(1000px) {
+    .about {
+        flex-direction: row;
+
+        &__img {
+            margin-bottom: 0;
+            width: auto;
+            min-height: auto;
+            flex: 3 1 20%;
+        }
+        &__article {
+            padding: 0 5.8rem;
+            width: auto;
+            flex: 4 1 30%;
+        }
+    }
+}

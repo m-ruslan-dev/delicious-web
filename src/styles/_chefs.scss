@@ -1,0 +1,109 @@
+@use "globals"as *;
+
+.chefs {
+    padding-top: 4rem;
+    padding-bottom: 8rem;
+    position: relative;
+    background: url("./img/chefs/chefs-bg.jpg") center / cover no-repeat fixed;
+
+    &::before {
+        content: "";
+        z-index: 1;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .section-heading {
+        position: relative;
+        z-index: 10;
+    }
+
+    &__holder {
+        position: relative;
+        z-index: 10;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        justify-items: center;
+    }
+
+    &__card {
+        position: relative;
+        margin-bottom: 80px;
+        max-width: 500px;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+    &__info {
+        @include add_flex();
+        flex-direction: column;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -70px;
+        width: 90%;
+        background-color: #fff;
+        padding: 1.2rem 0;
+
+        h3 {
+            color: #6c665c;
+            font-weight: 400;
+            font-size: 16px;
+            margin-bottom: 0.4rem;
+        }
+
+        span {
+            background-color: #ffcf88;
+            height: 1px;
+            width: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            color: #433f39;
+            font-size: 13px;
+            font-weight: 400;
+            font-style: italic;
+            margin-bottom: 0.8rem;
+        }
+    }
+
+    &__icon-holder {
+        cursor: pointer;
+    }
+    &__icons {
+        color: #7a7368;
+        font-size: 16px;
+        margin: 0 2px;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            color: #ffb03b;
+        }
+    }
+}
+
+@include breakpoint(800px) {
+    .chefs {
+        &__holder {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+@include breakpoint(1000px) {
+    .chefs {
+        &__holder {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        &__card {
+            margin-bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,113 @@
+@use "globals"as *;
+@use "swiper/css/bundle";
+
+.testimonials {
+    position: relative;
+    padding-top: 5.5rem;
+    padding-bottom: 9rem;
+    width: 100%;
+    background: url("./img/testimonials-bg.jpg") center / cover no-repeat;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #0c0b0a;
+        top: 0;
+        left: 0;
+        opacity: 0.7;
+    }
+
+    &__slider {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .swiper-wrapper {
+        width: 100%;
+    }
+
+    .swiper-slide {
+        @include add_flex();
+        flex-direction: column;
+
+        img {
+            width: 100px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            margin-bottom: 0.3rem;
+        }
+
+        h3 {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        h5 {
+            color: #ddd;
+            font-size: 14px;
+            font-weight: 400;
+            font-family: "Comic Neue", sans-serif;
+            margin-bottom: 1rem;
+        }
+
+        .stars-icons {
+            margin-bottom: 1rem;
+            color: $col-main;
+
+            span {
+                margin: 0 -2px;
+            }
+        }
+
+        .testimonials__review {
+            margin-bottom: 0.4rem;
+            text-align: center;
+
+            p {
+                color: #eee;
+                display: inline;
+                font-weight: 400;
+                font-style: italic;
+            }
+
+            .icon-quotes-left, .icon-quotes-right {
+                display: inline;
+                font-size: 22px;
+                color: rgba(255, 255, 255, 0.4);
+                margin: 0.8rem;
+                line-height: 10px;
+            }
+            .icon-quotes-right {
+                position: relative;
+                bottom: -10px;
+            }
+        }
+    }
+
+    .swiper-pagination-horizontal {
+        bottom: 100px;
+    }
+
+    .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+        opacity: 0.5;
+        background-color: #fff;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: $col-main;
+        opacity: 1;
+    }
+}
+
+@include breakpoint(800px) {
+    .testimonials {
+        .swiper-slide {
+            padding: 0 3.5rem;
+        }
+    }
+}

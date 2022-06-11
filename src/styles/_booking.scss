@@ -1,0 +1,36 @@
+@use "globals"as *;
+
+.book {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+@include breakpoint(800px) {
+    .book {
+        .form {
+            grid-template-columns: repeat(2, 1fr);
+
+            textarea {
+                grid-column: 1 / span 2;
+            }
+
+            button {
+                grid-column: 1 / span 2;
+            }
+        }
+    }
+}
+
+@include breakpoint(1000px) {
+    .book {
+        .form {
+            grid-template-columns: repeat(3, 1fr);
+            textarea {
+                grid-column: 1 / span 3;
+            }
+            button {
+                grid-column: 1 / span 3;
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+@use "globals"as *;
+
+.gallery {
+    padding: 4rem 1rem 0 1rem;
+
+    &__images {
+        display: grid;
+        gap: 0.2rem;
+        grid-template-columns: 1fr;
+    }
+    &__img-holder {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+            transition: all 0.4s ease-in-out;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+@include breakpoint(800px) {
+    .gallery {
+        &__images {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+@include breakpoint(1000px) {
+    .gallery {
+        &__images {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}

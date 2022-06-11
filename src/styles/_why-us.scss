@@ -1,0 +1,59 @@
+@use "globals"as *;
+
+.why-us {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    &__holder {
+        @include add_flex();
+        gap: 25px;
+        align-items: stretch;
+        flex-direction: column;
+    }
+    &__card {
+        padding: 3rem 1.8rem;
+        box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.1);
+        flex: 1;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            #num,
+            h3,
+            p {
+                color: #fff;
+            }
+            background-color: $col-main;
+            box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.2);
+            padding-top: 2rem;
+        }
+
+        #card-num {
+            color: #ffcf88;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        h3 {
+            font-family: 'Satisfy', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: #6c665c;
+            margin-bottom: 0.8rem;
+        }
+
+        p {
+            font-size: 15px;
+            color: #aaaaaa;
+            font-weight: 400;
+        }
+    }
+}
+
+@include breakpoint(1000px) {
+    .why-us {
+        &__holder {
+            flex-direction: row;
+        }
+    }
+}

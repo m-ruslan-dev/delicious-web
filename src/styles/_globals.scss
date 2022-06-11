@@ -1,0 +1,145 @@
+// Fonts
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+// Variables 
+
+$col-main: #ffb03b;
+$col-heading: #5f5950;
+
+$mobile: 320px;
+$tablet: 481px;
+$small-screen: 769px;
+$desktop: 1100px;
+
+// Mixins
+
+@mixin add_flex($jc: center, $ai: center) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin breakpoint($width) {
+    @media (min-width: $width) {
+        @content;
+    }
+}
+
+// General
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #444444;
+    font-weight: 300;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    padding: 0 3.5%;
+}
+
+button {
+    cursor: pointer;
+}
+
+.section-heading {
+    margin: 0 auto 2rem auto;
+    text-align: center;
+
+    h2 {
+        margin-bottom: 1rem;
+        line-height: 100%;
+        color: $col-heading;
+        font-family: 'Satisfy', sans-serif;
+        font-size: 32px;
+
+        span {
+            color: $col-main;
+        }
+    }
+}
+
+.form {
+    display: grid;
+    align-content: center;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    box-shadow: 0px 10px 15px 1px rgba(0, 0, 0, 0.1);
+    padding: 1.8rem;
+
+    input,
+    textarea {
+        border: 1px solid #ced4da;
+        padding: 0.8rem;
+        color: #212529;
+        font-size: 14px;
+        font-weight: 400;
+        font-family: inherit;
+        outline: none;
+        transition: border 0.3s ease-in-out;
+        
+        &:focus {
+            border-color: #86b7fe;
+        }
+    }
+
+    input {
+        height: 2.8rem;
+    }
+    textarea {
+        min-height: 160px;
+        resize: vertical;
+    }
+
+    button {
+        place-self: center center;
+        background-color: $col-main;
+        color: #fff;
+        font-family: inherit;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 1px;
+        border: none;
+        border-radius: 50px;
+        padding: 0.85rem 1.65rem;
+    }
+}
+
+.italic {
+    font-style: italic;
+}
+
+@include breakpoint($small-screen) {
+    .container {
+        padding: 0 5%;
+    }
+}
+
+@include breakpoint(1000px) {
+    .section-heading {
+        width: 50%;
+    }
+}
+@include breakpoint (1100px) {
+    .container {
+        padding: 0 9.2%;
+    }
+}
