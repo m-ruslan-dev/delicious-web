@@ -1,6 +1,13 @@
 import "./index.html";
 import "./style.scss";
 
+// FOUC fix
+
+window.addEventListener("load", () => {
+    let body = document.querySelector("body");
+    body.style.visibility = "visible";
+})
+
 // Lodash Debounce function 
 import debounce from "lodash.debounce";
 
