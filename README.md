@@ -6,7 +6,7 @@
 
 **[Live Demo](https://deli-web.netlify.app/ "Live Demo")**
 
-**Build with:**
+**Built with:**
 - HTML5
 - CSS3 / Sass
 - JavaScript
