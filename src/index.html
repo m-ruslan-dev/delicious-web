@@ -379,13 +379,13 @@
             <h2>Book a <span>Table</span></h2>
             <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
         </div>
-        <form class="form">
-            <input type="text" name="name" placeholder="Your Name">
-            <input type="text" name="email" placeholder="Your Email">
-            <input type="text" name="phone" placeholder="Your Phone">
+        <form class="form" action="#" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email">
+            <input type="tel" name="phone" placeholder="Your Phone" required>
             <input type="text" name="date" placeholder="Date" autocomplete="off">
             <input type="text" name="time" placeholder="Time" autocomplete="off">
-            <input type="number" name="people" placeholder="# of people">
+            <input type="number" name="people" placeholder="# of people" min="1">
             <textarea name="message" placeholder="Message"></textarea>
             <button type="submit">Send Message</button>
         </form>
@@ -612,11 +612,11 @@
                     </div>
                 </div>
             </div>
-            <form class="form">
-                <input type="text" name="name" placeholder="Your Name">
-                <input type="email" name="email" placeholder="Your Email">
-                <input type="text" name="subject" placeholder="Subject" id="subject">
-                <textarea name="message" placeholder="Message"></textarea>
+            <form class="form" action="#" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject" id="subject" required>
+                <textarea name="message" placeholder="Message" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
         </div>
