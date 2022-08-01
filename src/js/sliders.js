@@ -1,11 +1,17 @@
-import { Swiper, Navigation, Pagination, EffectFade, Autoplay } from "swiper";
-Swiper.use([Navigation, Pagination, EffectFade, Autoplay]);
+import { Swiper, Navigation, Pagination, EffectFade, Autoplay, Lazy } from "swiper";
+Swiper.use([Navigation, Pagination, EffectFade, Autoplay, Lazy]);
 
 // Header carousel
 const carousel = new Swiper(".carousel", {
     direction: "horizontal",
     loop: true,
-    effect: "fade", 
+    preloadImages: false,
+    lazy: {
+        loadPrevNext: true,
+        loadOnTransitionStart: true
+    },
+    effect: "fade",
+    speed: 400,
     fadeEffect: {
         crossFade: true
     },
@@ -19,7 +25,7 @@ const carousel = new Swiper(".carousel", {
         clickable: true,
     },
     autoplay: {
-        delay: 5000,
+        delay: 7000,
     },
 });
 
@@ -27,6 +33,11 @@ const carousel = new Swiper(".carousel", {
 const eSlider = new Swiper(".events__slider", {
     direction: "horizontal",
     loop: true,
+    preloadImages: false,
+    lazy: {
+        loadPrevNext: true,
+        loadOnTransitionStart: true
+    },
     pagination: {
         el: '.swiper-pagination',
         type: 'bullets',
@@ -41,7 +52,12 @@ const eSlider = new Swiper(".events__slider", {
 const tSlider = new Swiper(".testimonials__slider", {
     direction: "horizontal",
     loop: true,
-        pagination: {
+    preloadImages: false,
+    lazy: {
+        loadPrevNext: true,
+        loadOnTransitionStart: true
+    },
+    pagination: {
         el: '.swiper-pagination',
         type: 'bullets',
         clickable: true,

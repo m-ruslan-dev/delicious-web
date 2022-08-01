@@ -30,6 +30,18 @@ module.exports = {
       {
         test: /\.html$/i,
         loader: "html-loader",
+        options: {
+          sources: {
+            list: [
+              "...",
+              {
+                tag: "img",
+                attribute: "data-src",
+                type: "src"
+              },
+            ]
+          }
+        }
       },
     ],
   },
